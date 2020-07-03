@@ -1,4 +1,4 @@
-{% set version = "0.2.1" %}
+{% set version = "0.3" %}
 
 package:
   name: pymesh2
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/PyMesh/PyMesh/releases/download/v{{ version }}/pymesh2-{{ version }}-cp36-cp36m-linux_x86_64.whl
-  sha256: fd099114355b6793f584b387d6f18486564649902c252ff276638428c80bc358
+  sha256: e1e1d6073144d2c8fba9d6df12f56ef92a65245db25e24c28b6abefa9bc65154
 
 build:
   number: 0
-  skip: True  # [not (linux and py36)]
-  script: "{{ PYTHON }} -m pip install --no-deps -vv --ignore-installed ./pymesh2-{{ version }}-cp36-cp36m-linux_x86_64.whl"
+  skip: true  # [not (linux and py36)]
+  script: {{ PYTHON }} -m pip install --no-deps -vv --ignore-installed ./pymesh2-{{ version }}-cp36-cp36m-linux_x86_64.whl
 
 requirements:
   host:
